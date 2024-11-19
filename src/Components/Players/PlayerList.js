@@ -7,7 +7,7 @@ export default function PlayerList({
 }) {
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 w-full text-center gap-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full text-center gap-2">
         {playerList.map((player) => (
           <PlayerEl
             player={player}

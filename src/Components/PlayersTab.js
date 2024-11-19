@@ -9,7 +9,7 @@ export default function PlayersTab({
 }) {
   return (
     <div className="h-full flex flex-col justify-between bg-primary p-5 rounded-lg border-2 border-tertiaryLight text-lg ">
-      <header className="font-bold text-3xl lg:text-6xl text-center">
+      <header className="font-bold text-4xl md:text-6xl text-center">
         Team randomizer
       </header>
       <PlayerForm onAddPlayer={onAddPlayer} />

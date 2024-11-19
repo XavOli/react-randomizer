@@ -13,10 +13,10 @@ export default function TeamsForm({
     onShuffle();
   }
   return (
-    <div className="lg:flex justify-around items-center">
-      <h1 className="font-bold text-2xl lg:text-5xl text-center">Teams</h1>
+    <div className="md:flex justify-around items-center">
+      <h1 className="font-bold text-3xl md:text-5xl text-center">Teams</h1>
       <form
-        className="flex flex-col lg:flex-row items-center justify-center space-y-2 lg:space-y-0 lg:space-x-4 p-4"
+        className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 p-4"
         onSubmit={handleSubmit}
       >
         {/* Shuffle type input */}

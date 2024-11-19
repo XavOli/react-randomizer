@@ -31,7 +31,7 @@ export default function App() {
   }
 
   return (
-    <div className="grid lg:grid-cols-2 gap-4 justify-center align-center font-poppins md:mx-6 lg:mx-12w">
+    <div className="flex flex-col w-[97%] md:max-w-5xl   gap-4 h-full justify-center self-center justify-self-center font-poppins md:mx-6 lg:mx-12w">
       <PlayersTab
         playerList={playerList}
         onAddPlayer={handleAddPlayer}

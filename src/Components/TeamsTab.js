@@ -1,15 +1,46 @@
 import { useState } from 'react';
 import TeamsForm from './Teams/TeamsForm';
+import TeamsList from './Teams/TeamsList';
 export default function TeamsTab({ playerList }) {
-  const [numTeams, setNumTeams] = useState(1);
+  const [numTeams, setNumTeams] = useState(2);
   const [shuffleType, setShuffleType] = useState('random');
   const [teams, setTeams] = useState([]);
 
   function handleShuffle() {
-    console.log('Shufflin! Teams: ', numTeams, ' Shuffle type: ', shuffleType);
-
     if (numTeams > playerList.length)
       alert('You need more players to make that many teams!');
+
+    let newList = playerList.filter((player) => player.active);
+
+    if (shuffleType === 'random') {
+      newList = shuffle(newList);
+    } else {
+      newList = shuffle(
+        newList.filter((player) => player.sex === 'male')
+      ).concat(shuffle(newList.filter((player) => player.sex === 'female')));
+    }
+
+    splitTeams(newList);
+  }
+
+  function shuffle(list) {
+    const shuffledList = list;
+    for (let i = shuffledList.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledList[i], shuffledList[j]] = [shuffledList[j], shuffledList[i]];
+    }
+    return shuffledList;
+  }
+
+  function splitTeams(list) {
+    setTeams([]);
+    // Create an array, add empty array for each team
+    const newTeams = Array.from({ length: numTeams }, () => []);
+    // Take each player and iterate them into the teams in order
+    list.forEach((player, index) => {
+      newTeams[index % numTeams].push(player);
+    });
+    setTeams(newTeams);
   }
 
   return (
@@ -21,6 +52,7 @@ export default function TeamsTab({ playerList }) {
         setShuffleType={setShuffleType}
         onShuffle={handleShuffle}
       />
+      <TeamsList teams={teams} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import Button from '../Shared/Button';
 import '@fortawesome/fontawesome-free/js/all';
 
 export default function PlayerEl({ player, onDelPlayer, onSelectPlayer }) {
-  const classList = `border border-primary flex justify-between items-center bg-secondary pl-2 text-xl  ${
+  const classList = `flex border border-primary justify-between items-center rounded-md bg-secondary pl-2 text-xl  ${
     !player.active ? 'text-blue-400 line-through ' : ''
   }`;
   return (
@@ -16,7 +16,7 @@ export default function PlayerEl({ player, onDelPlayer, onSelectPlayer }) {
         {player.name}
       </p>{' '}
       <button onClick={() => onDelPlayer(player.id)}>
-        <i className="fa-solid fa-xmark fa-lg text-red-600"></i>
+        <i className="fa-solid fa-xmark fa-lg text-red-600 p-1 "></i>
       </button>
     </div>
   );

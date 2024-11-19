@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import PlayersTab from './Components/PlayersTab';
-import Teams from './Components/TeamsTab';
+import TeamsTab from './Components/TeamsTab';
 
 const starterList = [
   { name: 'Xavier', sex: 'male', id: crypto.randomUUID(), active: true },
-  { name: 'eve', sex: 'female', id: crypto.randomUUID(), active: true },
+  { name: 'Evelyne', sex: 'female', id: crypto.randomUUID(), active: true },
   { name: 'Max', sex: 'male', id: crypto.randomUUID(), active: false },
   { name: 'Amelie', sex: 'female', id: crypto.randomUUID(), active: true },
 ];
 
 export default function App() {
   const [playerList, setPlayerList] = useState(starterList);
-  const [teamsList, setTeamsList] = useState([]);
 
   function handleAddPlayer(player) {
     setPlayerList([...playerList, player]);
@@ -24,7 +23,6 @@ export default function App() {
   }
 
   function handleSelectPlayer(id) {
-    console.log(id);
     setPlayerList(
       playerList.map((player) =>
         player.id === id ? { ...player, active: !player.active } : player
@@ -40,7 +38,7 @@ export default function App() {
         onDelPlayer={handleDelPlayer}
         onSelectPlayer={handleSelectPlayer}
       />
-      <Teams />
+      <TeamsTab playerList={playerList} />
     </div>
   );
 }

@@ -13,6 +13,7 @@ export default function PlayerList({
             player={player}
             onDelPlayer={onDelPlayer}
             onSelectPlayer={onSelectPlayer}
+            key={player.id}
           />
         ))}
       </div>

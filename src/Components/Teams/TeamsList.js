@@ -6,9 +6,15 @@ export default function TeamsList({ teams }) {
   }`;
   return (
     <div className={classList}>
-      {teams.map((team, index) => (
-        <TeamEl team={team} key={index} index={index} />
-      ))}
+      {teams.length > 0 ? (
+        teams.map((team, index) => (
+          <TeamEl team={team} key={index} index={index} />
+        ))
+      ) : (
+        <div className="text-center justify-self-center max-w-72">
+          Shuffle everyone or split players by sex between teams!
+        </div>
+      )}
     </div>
   );
 }

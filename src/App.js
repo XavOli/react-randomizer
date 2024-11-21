@@ -1,16 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PlayersTab from './Components/PlayersTab';
 import TeamsTab from './Components/TeamsTab';
 
-const starterList = [
-  { name: 'Xavier', sex: 'male', id: crypto.randomUUID(), active: true },
-  { name: 'Evelyne', sex: 'female', id: crypto.randomUUID(), active: true },
-  { name: 'Max', sex: 'male', id: crypto.randomUUID(), active: false },
-  { name: 'Amelie', sex: 'female', id: crypto.randomUUID(), active: true },
-];
+// const starterList = [
+//   { name: 'Xavier', sex: 'male', id: crypto.randomUUID(), active: true },
+//   { name: 'Evelyne', sex: 'female', id: crypto.randomUUID(), active: true },
+//   { name: 'Max', sex: 'male', id: crypto.randomUUID(), active: false },
+//   { name: 'Amelie', sex: 'female', id: crypto.randomUUID(), active: true },
+// ];
 
 export default function App() {
-  const [playerList, setPlayerList] = useState(starterList);
+  const [playerList, setPlayerList] = useState(() => {
+    let list = localStorage.getItem('playerList');
+    list === null ? (list = []) : (list = JSON.parse(list));
+    return list;
+  });
 
   function handleAddPlayer(player) {
     setPlayerList([...playerList, player]);
@@ -21,6 +25,11 @@ export default function App() {
       setPlayerList(playerList.filter((cur) => cur.id !== id));
     }
   }
+
+  // Updates local storage when there is a change in the playerList
+  useEffect(() => {
+    localStorage.setItem('playerList', JSON.stringify(playerList));
+  }, [playerList]);
 
   function handleSelectPlayer(id) {
     setPlayerList(

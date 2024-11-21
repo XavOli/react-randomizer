@@ -7,10 +7,11 @@ export default function TeamsTab({ playerList }) {
   const [teams, setTeams] = useState([]);
 
   function handleShuffle() {
-    if (numTeams > playerList.length)
-      alert('You need more players to make that many teams!');
-
     let newList = playerList.filter((player) => player.active);
+    if (numTeams > newList.length) {
+      alert('You need more active players to make that many teams!');
+      return;
+    }
 
     if (shuffleType === 'random') {
       newList = shuffle(newList);

@@ -9,14 +9,19 @@ export default function PlayerEl({ player, onDelPlayer, onSelectPlayer }) {
     <div className={classList}>
       <i
         className={
-          player.sex === 'male' ? 'fa-solid fa-mars' : 'fa-solid fa-venus'
+          player.sex === 'male'
+            ? 'fa-solid fa-mars pr-2'
+            : 'fa-solid fa-venus pr-2'
         }
       ></i>{' '}
-      <p onClick={() => onSelectPlayer(player.id)} className="cursor-pointer">
+      <p
+        onClick={() => onSelectPlayer(player.id)}
+        className="cursor-pointer overflow-x-auto"
+      >
         {player.name}
       </p>{' '}
       <button onClick={() => onDelPlayer(player.id)}>
-        <i className="fa-solid fa-xmark fa-lg text-red-600 p-1 "></i>
+        <i className="fa-solid fa-xmark fa-lg text-red-600 p-1 pl-2"></i>
       </button>
     </div>
   );

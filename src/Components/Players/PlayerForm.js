@@ -30,7 +30,7 @@ export default function PlayerForm({ onAddPlayer }) {
         <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-2">
           <input
             type="text"
-            className="border rounded-sm border-secondary text-center p-2  bg-tertiaryLight"
+            className="border rounded-sm border-secondary text-center p-2 w-48 bg-tertiaryLight"
             id="player-name"
             aria-label="Player Name"
             name="item"

@@ -1,6 +1,7 @@
 {
-  "name": "react-tailwind-starter",
+  "name": "team-randomizer",
   "version": "0.1.0",
+  "homepage": "https://xavoli.github.io/react-randomizer",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.0",

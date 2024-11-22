@@ -8,7 +8,7 @@ export default function TeamsList({ teams }) {
     <div className={classList}>
       {teams.length > 0 ? (
         teams.map((team, index) => (
-          <TeamEl team={team} key={index} index={index} />
+          <TeamEl team={team} key={index} index={index} teams={teams} />
         ))
       ) : (
         <div className="text-center justify-self-center max-w-72">

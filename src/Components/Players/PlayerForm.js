@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../Shared/Button';
 
-export default function PlayerForm({ onAddPlayer }) {
+export default function PlayerForm({ onAddPlayer, playerList }) {
   const [name, setName] = useState('');
   const [sex, setSex] = useState('male');
 
@@ -30,7 +30,11 @@ export default function PlayerForm({ onAddPlayer }) {
         <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-2">
           <input
             type="text"
-            className="border rounded-sm border-secondary text-center p-2 w-48 bg-tertiaryLight"
+            className={
+              playerList.length > 0
+                ? 'border-2 border-secondary rounded-sm text-center p-2 w-48 bg-tertiaryLight'
+                : 'border-2 border-yellow-300 rounded-sm text-center p-2 w-48 bg-secondary'
+            }
             id="player-name"
             aria-label="Player Name"
             name="item"

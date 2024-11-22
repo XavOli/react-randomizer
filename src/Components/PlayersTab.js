@@ -12,7 +12,7 @@ export default function PlayersTab({
       <header className="font-bold text-4xl md:text-6xl text-center">
         Team randomizer
       </header>
-      <PlayerForm onAddPlayer={onAddPlayer} />
+      <PlayerForm onAddPlayer={onAddPlayer} playerList={playerList} />
       <PlayerList
         playerList={playerList}
         onDelPlayer={onDelPlayer}

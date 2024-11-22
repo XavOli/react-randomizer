@@ -18,10 +18,20 @@ export default function PlayerList({
             />
           ))
         ) : (
-          <div className="col-span-full">Add some players to get started!</div>
+          <div className="col-span-full border-2 p-2 border-yellow-300 bg-secondary">
+            Add some players to get started!
+          </div>
+        )}
+        {playerList.length > 0 && (
+          <div className="pt-2 col-span-full md:space-x- flex flex-col md:flex-row justify-center">
+            <span>
+              Active player count:{' '}
+              {playerList.filter((player) => player.active).length}
+            </span>
+            <span> Total player count : {playerList.length}</span>
+          </div>
         )}
       </div>
-      <div className="pt-2">Player count : {playerList.length}</div>
     </>
   );
 }

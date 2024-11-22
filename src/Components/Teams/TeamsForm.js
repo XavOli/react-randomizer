@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Button from '../Shared/Button';
 
 export default function TeamsForm({

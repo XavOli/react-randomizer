@@ -27,7 +27,7 @@ export default function PlayerForm({ onAddPlayer, playerList }) {
         className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4 p-4 py-6"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-2 ">
+        <div className="flex flex-col md:flex-row justify-center items-center pb-2 md:pb-0 space-y-2 md:space-y-0 md:space-x-2 ">
           <input
             type="text"
             className={
@@ -42,8 +42,8 @@ export default function PlayerForm({ onAddPlayer, playerList }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <div className="space-x-4">
-            <label>Choose player sex</label>
+          <div>
+            <label className="pr-2">Choose player sex</label>
             <select
               className="bg-tertiaryLight rounded-sm"
               value={sex}

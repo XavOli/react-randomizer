@@ -18,7 +18,7 @@ export default function PlayerList({
             />
           ))
         ) : (
-          <div className="col-span-full border-2 p-2 border-yellow-300 bg-secondary">
+          <div className="col-span-full mx-auto border-2 p-2 border-yellow-300 bg-secondary">
             Add some players to get started!
           </div>
         )}

@@ -11,7 +11,7 @@ export default function TeamsList({ teams }) {
           <TeamEl team={team} key={index} index={index} teams={teams} />
         ))
       ) : (
-        <div className="text-center justify-self-center max-w-72 md:max-w-full bg-secondary border-2 border-purple-700 p-2">
+        <div className="text-center justify-self-center max-w-72 md:max-w-full bg-secondary border-2 border-yellow-300 p-2">
           Shuffle everyone or split players by sex between teams!
         </div>
       )}

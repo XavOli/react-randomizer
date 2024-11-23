@@ -23,7 +23,7 @@ export default function PlayerList({
           </div>
         )}
         {playerList.length > 0 && (
-          <div className="pt-2 col-span-full md:space-x- flex flex-col md:flex-row justify-center">
+          <div className="pt-2 col-span-full space-y-2 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
             <span>
               Active player count:{' '}
               {playerList.filter((player) => player.active).length}

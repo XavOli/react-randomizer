@@ -40,7 +40,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex-col w-[97%] max-w-[97vw] md:max-w-5xl gap-4 h-full justify-center self-center justify-self-center font-poppins md:mx-6 lg:mx-12w">
+    <div className="container mx-auto min-h-screen flex flex-col w-[97%] py-2 px-2 md:py-8 justify-center items-center font-poppins text-white">
       <PlayersTab
         playerList={playerList}
         onAddPlayer={handleAddPlayer}

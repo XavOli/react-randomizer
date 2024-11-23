@@ -45,7 +45,7 @@ export default function TeamsTab({ playerList }) {
   }
 
   return (
-    <div className="h-full flex flex-col justify-start bg-primary p-5 rounded-lg border-2 border-tertiaryLight text-lg ">
+    <div className="h-full w-full md:max-w-3xl flex flex-col justify-start bg-primary p-5 rounded-lg border-2 border-tertiaryLight text-lg">
       <TeamsForm
         numTeams={numTeams}
         setNumTeams={setNumTeams}

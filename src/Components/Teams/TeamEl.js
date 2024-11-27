@@ -6,8 +6,8 @@ export default function TeamEl({ team, index, teams }) {
       )}
 
       {team.map((player, index) => (
-        <div key={player.id}>
-          {index + 1}. {player.name}
+        <div key={player.id} className="max-w-[95%] break-words">
+          {`${index + 1}. ${player.name}`}
         </div>
       ))}
     </div>

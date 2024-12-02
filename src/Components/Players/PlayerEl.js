@@ -1,4 +1,3 @@
-import Button from '../Shared/Button';
 import '@fortawesome/fontawesome-free/js/all';
 
 export default function PlayerEl({ player, onDelPlayer, onSelectPlayer }) {

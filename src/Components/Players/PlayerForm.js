@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '../Shared/Button';
 
 export default function PlayerForm({ onAddPlayer, playerList }) {
   const [name, setName] = useState('');
   const [sex, setSex] = useState('male');
+  const nameInputEl = useRef(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,6 +21,14 @@ export default function PlayerForm({ onAddPlayer, playerList }) {
     onAddPlayer(newPlayer);
     setName('');
   }
+
+  // Bring back the focus to the player name form when pressing on the "Add player button"
+  useEffect(
+    function () {
+      nameInputEl.current.focus();
+    },
+    [playerList]
+  );
 
   return (
     <div>
@@ -41,6 +50,7 @@ export default function PlayerForm({ onAddPlayer, playerList }) {
             placeholder="Enter Player Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            ref={nameInputEl}
           />
           <div>
             <label className="pr-2">Choose player sex</label>

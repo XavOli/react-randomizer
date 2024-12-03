@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-randomizer/static/css/main.59487e12.css",
-    "main.js": "/react-randomizer/static/js/main.5aa01b67.js",
+    "main.js": "/react-randomizer/static/js/main.c9c37d93.js",
     "index.html": "/react-randomizer/index.html",
     "main.59487e12.css.map": "/react-randomizer/static/css/main.59487e12.css.map",
-    "main.5aa01b67.js.map": "/react-randomizer/static/js/main.5aa01b67.js.map"
+    "main.c9c37d93.js.map": "/react-randomizer/static/js/main.c9c37d93.js.map"
   },
   "entrypoints": [
     "static/css/main.59487e12.css",
-    "static/js/main.5aa01b67.js"
+    "static/js/main.c9c37d93.js"
   ]
 }

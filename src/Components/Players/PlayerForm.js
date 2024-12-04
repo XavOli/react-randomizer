@@ -23,12 +23,9 @@ export default function PlayerForm({ onAddPlayer, playerList }) {
   }
 
   // Bring back the focus to the player name form when pressing on the "Add player button"
-  useEffect(
-    function () {
-      nameInputEl.current.focus();
-    },
-    [playerList]
-  );
+  useEffect(function () {
+    nameInputEl.current.focus();
+  }, []);
 
   return (
     <div>

@@ -8,11 +8,14 @@ export default function PlayerForm({ onAddPlayer, playerList }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!name) return;
+    if (!name.trim()) {
+      setName('');
+      return;
+    }
 
     const id = crypto.randomUUID();
     const newPlayer = {
-      name,
+      name: name.trim(),
       id,
       sex,
       active: true,

@@ -1,3 +1,4 @@
+import PlayerCount from './PlayerCount';
 import PlayerEl from './PlayerEl';
 
 export default function PlayerList({
@@ -5,10 +6,12 @@ export default function PlayerList({
   onDelPlayer,
   onSelectPlayer,
 }) {
+  const activeCount = playerList.filter((player) => player.active).length;
+  const totalCount = playerList.length;
   return (
     <>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full text-center gap-2">
-        {playerList.length > 0 ? (
+        {totalCount > 0 ? (
           playerList.map((player) => (
             <PlayerEl
               player={player}
@@ -22,14 +25,8 @@ export default function PlayerList({
             Add some players to get started!
           </div>
         )}
-        {playerList.length > 0 && (
-          <div className="pt-2 col-span-full space-y-2 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
-            <span>
-              Active player count:{' '}
-              {playerList.filter((player) => player.active).length}
-            </span>
-            <span> Total player count : {playerList.length}</span>
-          </div>
+        {totalCount > 0 && (
+          <PlayerCount totalCount={totalCount} activeCount={activeCount} />
         )}
       </div>
     </>

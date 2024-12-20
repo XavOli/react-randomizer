@@ -32,6 +32,7 @@ export default function PlayerForm({ onAddPlayer, playerList }) {
 
   return (
     <div>
+      <h1 className="font-bold text-3xl md:text-5xl text-center">Players</h1>
       <form
         className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4 p-4 py-6"
         onSubmit={handleSubmit}

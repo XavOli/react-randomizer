@@ -2,27 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { useEffect, useState } from 'react';
 import PlayersTab from './PlayersTab';
 import TeamsTab from './TeamsTab';
-import { Outlet, NavLink } from 'react-router';
-
-function Layout() {
-  return (
-    <div className="container mx-auto min-h-screen flex flex-col justify-center items-center font-poppins text-white">
-      <nav className="flex space-x-4 justify-start items-center bg-red-500">
-        <header className="font-bold text-4xl md:text-4xl text-center">
-          Team randomizer
-        </header>
-        <NavLink to="players" className="text-blue-400 hover:text-blue-600">
-          Players
-        </NavLink>
-        <NavLink to="teams" className="text-blue-400 hover:text-blue-600">
-          Teams
-        </NavLink>
-      </nav>
-
-      <Outlet />
-    </div>
-  );
-}
+import Layout from './Layout';
+import LandingPage from './LandingPage';
 
 export default function App() {
   const [playerList, setPlayerList] = useState(() => {
@@ -56,6 +37,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<LandingPage />} />
           <Route
             path="players"
             element={
